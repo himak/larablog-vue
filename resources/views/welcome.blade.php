@@ -48,6 +48,7 @@
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid">
                         <div class="p-6">
+
                             <div class="text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">{{ $title }}</a></div>
 
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">

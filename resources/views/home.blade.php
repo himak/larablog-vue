@@ -15,9 +15,22 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    @dump( auth()->id() )
+                    @dump( auth()->user()->id )
+                    @dump( auth()->user()->name)
+                    @dump( auth()->user()->email)
+
+                    <pre>
+                        @php
+                            print_r( auth()->user() )
+                        @endphp
+                    </pre>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

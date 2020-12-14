@@ -18,19 +18,13 @@ class PagesController extends Controller
     }
 
     public function about() {
-        return 'about page';
+        return view('about')->with([
+            'title' => 'About',
+            'description' => 'This is content page.'
+        ]);
     }
 
     public function contact() {
-        return 'about contact';
-    }
-
-    public function dudes() {
-        return [
-            'princess bubblegum',
-            'lyra belacqua',
-            'imperator furiosa',
-            'solid...er snake'
-        ];
+        return view('contact')->withTitle('Contact');
     }
 }

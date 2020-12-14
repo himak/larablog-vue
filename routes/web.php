@@ -16,3 +16,7 @@ Route::get('/', [\App\Http\Controllers\PagesController::class, 'home']);
 Route::get('/about', [\App\Http\Controllers\PagesController::class, 'about']);
 Route::get('/contact', [\App\Http\Controllers\PagesController::class, 'contact']);
 Route::get('/dudes', [\App\Http\Controllers\PagesController::class, 'dudes']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

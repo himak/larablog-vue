@@ -14,6 +14,8 @@
                     <li>
                         <h2>{{ $post->title }}</h2>
                         <p>{{ $post->text }}</p>
+
+                        <small class="is-size-6">{{ $post->user->name }}</small>
                     </li>
                 @endforeach
             </ul>

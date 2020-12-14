@@ -5,24 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Comment extends Model
 {
     use HasFactory;
 
-    protected $hidden = ['updated_at'];
-
-
     /**
-     * Get the author of the blog post.
+     * Get the author of the comment.
      */
     public function user() {
         return $this->belongsTo(User::class);
     }
 
     /**
-     * Get the author of the blog post.
+     * Get post this comment belongs to.
      */
-    public function comments() {
-        return $this->hasMany(Comment::class);
+    public function post() {
+        return $this->belongsTo(Post::class);
     }
 }

@@ -1,16 +1,11 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+        <progress class="progress is-primary" value="15" max="100">15%</progress>
+        <progress class="progress is-link" value="30" max="100">30%</progress>
+        <progress class="progress is-info" value="45" max="100">45%</progress>
+        <progress class="progress is-success" value="60" max="100">60%</progress>
+        <progress class="progress is-warning" value="75" max="100">75%</progress>
+        <progress class="progress is-danger" value="90" max="100">90%</progress>
     </div>
 </template>
 

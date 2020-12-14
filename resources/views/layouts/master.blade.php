@@ -17,15 +17,9 @@
 </head>
 <body>
 <div id="app">
-    <main class="py-4">
+    <main class="container">
         @yield('content')
     </main>
-
-    <example-component></example-component>
-
-    <aside class="py-4">
-        @yield('sidebar')
-    </aside>
 </div>
 </body>
 </html>

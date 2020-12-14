@@ -18,3 +18,13 @@ ol {
   padding-left: 0;
 }
 
+ul li,
+ol li {
+  margin-bottom: 1.5em;
+}
+
+.posts p {
+  color: white;
+  font-size: 0.5em;
+}
+

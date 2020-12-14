@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function home() {
+
+//        return Post::all();
+//        return Post::first();
+//        return Post::all()->last();
+//        return Post::all()->pluck('title');
+
         return view('welcome', [
             'title' => '(ಠ_ಠ)',
-            'posts' => [
-                'just like hamburger; exactly like hamburger',
-                'the blender who would recite shakespeare',
-                'what we might mean when we say a clock is wrong',
-            ]
+            'posts' => Post::all()
         ]);
+
     }
 
     public function about() {

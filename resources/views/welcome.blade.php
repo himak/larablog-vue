@@ -2,11 +2,23 @@
 
 @section('content')
 
-    <h1 class="display-4">{{ $title }}</h1>
 
-    @foreach($posts as $post)
-        <p>{{ $post }}</p>
-    @endforeach
+    <section class="columns is-centered">
+        <div class="column is-three-fifths">
+            <h1 class="title">
+                {{ $title }}
+            </h1>
+
+            <ul class="posts">
+                @foreach($posts as $post)
+                    <li>
+                        <h2>{{ $post->title }}</h2>
+                        <p>{{ $post->text }}</p>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </section>
 
 @endsection
 

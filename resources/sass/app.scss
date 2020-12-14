@@ -26,4 +26,15 @@ ul,
 ol {
     list-style: none;
     padding-left: 0;
+
+    li {
+        margin-bottom: 1.5em;
+    }
+}
+
+.posts {
+    p {
+        color: white;
+        font-size: .5em;
+    }
 }

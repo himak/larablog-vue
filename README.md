@@ -6,12 +6,16 @@ Install dependencies
 
     composer install
     npm install && npm run dev
+    
+Create database tables
+
+    php artisan migrate
 
 Start server and open browser
 
     php artisan serve
     http://localhost:8000
     
-Create database tables
+Debug Telescope you can find
 
-    php artisan migrate
+    http://localhost:8000/telescope

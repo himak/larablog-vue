@@ -17,11 +17,30 @@
 </head>
 <body>
 
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
+
     <header class="site-header">
         <h1 class="title logo">
             <a href="/">(ಠ_ಠ)</a>
         </h1>
     </header>
+
+    @guest
+        <h1 class="title">som neprihlaseny</h1>
+    @endguest
+
+    @auth
+        <h1 class="title">som LOGGED. THE FUCK. IN.</h1>
+
+        <code>
+            {{ auth()->user() }}
+        </code>
+    @endauth
+
+
 
     <div id="app">
         <main class="columns is-centered">

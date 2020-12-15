@@ -11792,3 +11792,34 @@ body {
     }
 } */
 
+.field,
+.label {
+  color: inherit;
+}
+
+#logout-form {
+  display: none;
+}
+
+.navigation {
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 1em 1.5em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: right;
+}
+
+.navigation a {
+  border-color: #7a7a7a;
+  border-bottom-width: 2px;
+  margin-left: 0.75em;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    padding: 1em 2em;
+  }
+}
+

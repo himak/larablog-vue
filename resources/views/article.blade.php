@@ -1,15 +1,24 @@
-<li>
+<article class="post">
 
-    <h2>{{ $post->title }}</h2>
-    <p>{{ $post->text }}</p>
+    <header>
+        <h2 class="title">
+            <a href="">
+                {{ $post->title }}
+            </a>
+        </h2>
+    </header>
 
-    <small class="is-size-6">
-        {{ $post->user->name }}
-    </small>
+    <div class="content">
+        {!! nl2br($post->text) !!}
+    </div>
 
-    @foreach($post->comments as $comments)
-        <br>
-        <em class="is-size-7">{{ $comments->text }}</em>
-    @endforeach
+    <footer class="meta">
+        <a href="" class="author">
+            @<strong>{{ $post->user->name }}</strong>
+        </a>
+        <a href="" class="comments">
+            {{ $post->comments->count() }} <strong>{{ str_plural('comment', $post->comments->count()) }}</strong>
+        </a>
+    </footer>
 
-</li>
+</article>

@@ -11737,3 +11737,58 @@ body {
   font-size: 1.2rem;
 }
 
+.comment-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.comment {
+  margin-bottom: 1.5em;
+}
+
+.comment .meta {
+  font-size: 1rem;
+  margin-top: 0.35em;
+}
+
+.comment .content {
+  margin-bottom: 0;
+}
+
+.comment time {
+  margin-left: 1em;
+}
+
+/**
+ * COMMENT FORM
+ */
+
+.add-comment-form {
+  margin-bottom: 2.25em;
+  padding-bottom: 2.25em;
+  border-bottom: 4px dotted #7a7a7a;
+}
+
+.add-comment-form .button {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.add-comment-form .field textarea,
+.add-comment-form .field input {
+  outline: none;
+  border: none transparent;
+}
+
+.add-comment-form .field textarea:focus,
+.add-comment-form .field input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.225em rgba(255, 255, 255, 0.25);
+}
+
+/* .comments {
+    li:last-child {
+        margin-bottom: 0;
+    }
+} */
+

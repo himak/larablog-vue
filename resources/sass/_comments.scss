@@ -1,0 +1,56 @@
+.comment-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.comment {
+    margin-bottom: 1.5em;
+
+    .meta {
+        font-size: 1rem;
+        margin-top: 0.35em;
+    }
+
+    .content {
+        margin-bottom: 0;
+    }
+
+    time {
+        margin-left: 1em;
+    }
+}
+
+/**
+ * COMMENT FORM
+ */
+.add-comment-form {
+    margin-bottom: 2.25em;
+
+    // TODO: remove?
+    padding-bottom: 2.25em;
+    border-bottom: 4px dotted #7a7a7a;
+
+    .button {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .field {
+        textarea,
+        input {
+            outline: none;
+            border: none transparent;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 0.225em rgba(255, 255, 255, 0.25);
+            }
+        }
+    }
+}
+
+/* .comments {
+    li:last-child {
+        margin-bottom: 0;
+    }
+} */

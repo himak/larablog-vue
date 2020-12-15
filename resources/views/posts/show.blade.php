@@ -4,4 +4,6 @@
 
     @include('posts.article', [ 'type' => 'full'])
 
+    @include('comments.index')
+
 @endsection

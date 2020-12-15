@@ -12,7 +12,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::all();
+        return view('posts.index', [
+            'posts' => Post::latest('id')->get()
+        ]);
     }
 
     /**
@@ -36,7 +38,9 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return $post;
+        return view('posts.show', [
+            'post' => $post
+        ]);
     }
 
     /**

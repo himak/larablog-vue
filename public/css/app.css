@@ -11724,3 +11724,16 @@ body {
   font-size: 1rem;
 }
 
+.post .meta .author {
+  margin-right: 1em;
+}
+
+.post .post .meta {
+  margin-top: 1.5em;
+}
+
+.post.full .content,
+.post.full footer {
+  font-size: 1.2rem;
+}
+

@@ -38,4 +38,21 @@
     footer {
         font-size: 1rem;
     }
+
+    .meta {
+        .author {
+            margin-right: 1em;
+        }
+
+        .post & {
+            margin-top: 1.5em;
+        }
+    }
+
+    &.full {
+        .content,
+        footer {
+            font-size: 1.2rem;
+        }
+    }
 }

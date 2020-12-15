@@ -1,0 +1,29 @@
+/**
+ * HIGHLIGHT
+ */
+.title,
+strong {
+    color: $yellow;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.title {
+    text-align: center;
+}
+
+/**
+ * LINKS
+ */
+a {
+    color: inherit;
+
+    &:hover {
+        color: inherit;
+        border-bottom: 4px dotted white;
+    }
+
+    strong {
+        color: $yellow;
+    }
+}

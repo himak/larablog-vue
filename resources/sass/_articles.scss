@@ -1,0 +1,40 @@
+/**
+ * LIST OF POSTS
+ */
+.posts {
+    list-style: none;
+
+    li {
+        margin-bottom: 1.5em;
+    }
+}
+
+/**
+* POST (ARTICLE)
+*/
+.post {
+    background: $dark;
+    border-radius: 0.75em;
+    padding: 1.1em 1.45em 1.4em;
+
+    .title {
+        margin-bottom: 0.65em;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    footer {
+        margin-top: 1.5em;
+
+        .comments {
+            margin-left: 1em;
+        }
+    }
+
+    .content,
+    footer {
+        font-size: 1rem;
+    }
+}

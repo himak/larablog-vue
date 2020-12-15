@@ -1,40 +1,11 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,800");
 
 // Bulma
-@import "~bulma/css/bulma.min.css";
+@import "~bulma/css/bulma.css";
 
-
-body {
-    font-family: $font-family-sans-serif;
-    font-size: 2em;
-    text-align: center;
-    min-height: 100vh;
-    color: $yellow;
-    background: $body-bg;
-}
-
-.title {
-    font-size: 5em;
-    font-weight: bold;
-}
-
-ul,
-ol {
-    list-style: none;
-    padding-left: 0;
-
-    li {
-        margin-bottom: 1.5em;
-    }
-}
-
-.posts {
-    p {
-        color: white;
-        font-size: .5em;
-    }
-}
+// Variables
+@import "variables";
+@import "typography";
+@import "general";
+@import "articles";

@@ -16,10 +16,20 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <main class="container">
-        @yield('content')
-    </main>
-</div>
+
+    <header class="site-header">
+        <h1 class="title logo">
+            <a href="/">(ಠ_ಠ)</a>
+        </h1>
+    </header>
+
+    <div id="app">
+        <main class="columns is-centered">
+            <section class="column is-three-fifths">
+                @yield('content')
+            </section>
+        </main>
+    </div>
+
 </body>
 </html>

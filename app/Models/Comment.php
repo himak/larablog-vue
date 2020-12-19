@@ -13,7 +13,7 @@ class Comment extends Model
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'text', 'post_id', 'user_id'
+        'text', 'post_id'
     ];
 
     /**

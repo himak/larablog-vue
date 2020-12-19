@@ -20,7 +20,11 @@ class CommentController extends Controller
         // return request()->text;
         // return request('text');
 
-        Comment::create(
+//        Comment::create(
+//            $request->all()
+//        );
+
+        auth()->user()->comments()->create(
             $request->all()
         );
 

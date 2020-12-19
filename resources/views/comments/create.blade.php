@@ -1,3 +1,5 @@
+@include('errors')
+
 <form action="/comments" method="POST" class="add-comment-form">
 
 	@csrf

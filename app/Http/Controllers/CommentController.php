@@ -12,7 +12,20 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        // return $request;
+        // return $request->all();
+        // return $request->only(['text','post_id']);
+        // return $request->except('text');
+        // return request()->except('user_id');
+        // return request()->text;
+        // return request('text');
+
+        Comment::create(
+            $request->all()
+        );
+
+//        return redirect()->back();
+        return redirect('/posts/' . $request->post_id . '#comments');
     }
 
     /**

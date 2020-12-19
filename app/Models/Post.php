@@ -23,6 +23,6 @@ class Post extends Model
      * Get the author of the blog post.
      */
     public function comments() {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->latest();
     }
 }

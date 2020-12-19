@@ -12,13 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// auth
+Auth::routes();
+
 // home
 Route::get('/', [\App\Http\Controllers\PostController::class, 'index']);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// auth
-Auth::routes();
-
-
-// post
+// posts
 Route::resource('posts', \App\Http\Controllers\PostController::class);
+
+// comments
+Route::resource('comments', \App\Http\Controllers\CommentController::class)->only(['store', 'update', 'destroy']);

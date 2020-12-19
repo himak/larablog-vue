@@ -11,6 +11,13 @@ class Post extends Model
 
     protected $hidden = ['updated_at'];
 
+    /**
+     * Get the route key for the model.
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';  // 'slug' is column in DB for posts
+    }
 
     /**
      * Get the author of the blog post.

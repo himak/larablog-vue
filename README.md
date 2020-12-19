@@ -27,3 +27,6 @@ Laravel IDE Helper Generator
     php artisan cache:clear
     php artisan clear-compiled
     php artisan ide-helper:generate
+
+### Tips
+ - If get data from DB by some column, you should add index (unique) on this column. (Lesson 25)

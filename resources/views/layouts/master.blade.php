@@ -32,7 +32,7 @@
             </section>
         </main>
 
-        <flash-message text="Im flash message"></flash-message>
+        <flash-message text="{{ session('flash') }}"></flash-message>
     </div>
 
 </body>

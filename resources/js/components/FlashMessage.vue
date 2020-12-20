@@ -22,7 +22,9 @@
         },
 
         created() {
-            this.show();
+            if(this.text) {
+                this.show();
+            }
         },
 
         methods: {

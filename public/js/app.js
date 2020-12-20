@@ -1927,7 +1927,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.show();
+    if (this.text) {
+      this.show();
+    }
   },
   methods: {
     show: function show() {

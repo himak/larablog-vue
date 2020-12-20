@@ -29,7 +29,8 @@ class CommentController extends Controller
             $request->all()
         );
 
-        return redirect('/posts/' . $comment->post->slug . '#comments');
+        return redirect('/posts/' . $comment->post->slug . '#comments')
+            ->with('flash', 'you totally commented!');
     }
 
     /**

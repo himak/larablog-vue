@@ -31,6 +31,8 @@
                 @yield('content')
             </section>
         </main>
+
+        <flash-message text="Im flash message"></flash-message>
     </div>
 
 </body>

@@ -1911,24 +1911,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Comment',
   props: ['comment-data'],
+  // data about comment from blade
   data: function data() {
     return {
-      editing: false
+      editing: false,
+      newText: ''
     };
   },
   mounted: function mounted() {
-    console.log(this.commentData);
+    this.newText = this.commentData.text;
   },
   methods: {
+    textChanged: function textChanged() {
+      this.newText = this.$refs.input.innerText;
+    },
     updateComment: function updateComment() {
-      axios.patch('/comments/' + this.commentData.id, {
-        text: 'lol lol hacked comment'
-      });
       this.editing = false;
+      axios.patch('/comments/' + this.commentData.id, {
+        text: this.newText
+      });
     },
     deleteComment: function deleteComment() {
-      axios["delete"]('/comments/' + this.commentData.id);
-      this.$el.remove();
+      if (window.confirm('are you sure ???')) {
+        axios["delete"]('/comments/' + this.commentData.id);
+        this.$el.remove();
+      }
     }
   }
 });

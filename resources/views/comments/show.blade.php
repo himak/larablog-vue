@@ -3,8 +3,10 @@
     <article class="comment">
 
         <div
+            ref="input"
             class="content"
             :contenteditable="editing"
+            @input="textChanged"
             @keydown.enter="updateComment"
         >
             {{ $comment->text }}

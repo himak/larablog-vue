@@ -22,12 +22,12 @@
                 {{ $comment->created_at->diffForHumans() }}
             </time>
 
-            @if( $comment->user_id === auth()->id() )
+            @can('update', $comment)
                 <span class="controls has-text-grey">
                     <a class="edit" @click="editing = true">edit</a>
                     <a class="delete">x</a>
                 </span>
-            @endif
+            @endcan
 
         </footer>
 

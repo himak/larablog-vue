@@ -1,14 +1,28 @@
 <script>
 export default {
+
     name: 'Comment',
+
     data() {
         return {
-            visible: true
+            editing: false
+        }
+    },
+
+    methods: {
+        updateComment() {
+            alert('SAVED!')
+            this.editing = false
         }
     }
 }
 </script>
 
-<style scoped>
 
+
+<style lang="scss" scoped>
+    [contenteditable='true'] {
+        box-shadow: 0 2px 0 #fff;
+        outline: none;
+    }
 </style>

@@ -8,15 +8,26 @@ export default {
     data() {
         return {
             editing: false,
-            newText: ''
+            newText: '',
+            oldText: ''
         }
     },
 
     mounted() {
-      this.newText = this.commentData.text
+      this.oldText = this.newText = this.commentData.text
     },
 
     methods: {
+        startEditing() {
+            this.editing = true
+            this.selectText()
+        },
+
+        resetText() {
+            this.editing = false
+            this.$refs.input.innerText = this.oldText
+        },
+
         textChanged() {
             this.newText = this.$refs.input.innerText
         },
@@ -27,6 +38,8 @@ export default {
             axios.patch('/comments/' + this.commentData.id, {
                 text: this.newText
             })
+
+            this.oldText = this.newText
         },
 
         deleteComment() {
@@ -34,6 +47,19 @@ export default {
                 axios.delete('/comments/' + this.commentData.id)
                 this.$el.remove()
             }
+        },
+
+        selectText() {
+            setTimeout(() => {
+                let p = this.$refs.input,
+                    s = window.getSelection(),
+                    r = document.createRange()
+                r.setStart(p, 0)
+                r.setEnd(p, 1)
+                s.removeAllRanges()
+                s.addRange(r)
+                p.focus()
+            }, 0)
         }
     }
 }

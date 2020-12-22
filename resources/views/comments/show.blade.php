@@ -7,6 +7,8 @@
             class="content"
             :contenteditable="editing"
             @input="textChanged"
+            @blur="resetText"
+            @keydown.esc="resetText"
             @keydown.enter="updateComment"
         >
             {{ $comment->text }}
@@ -25,7 +27,7 @@
 
             @can('update', $comment)
                 <span class="controls has-text-grey">
-                    <a class="edit" @click="editing = true">edit</a>
+                    <a class="edit" @click="startEditing">edit</a>
                     <a class="delete" @click="deleteComment">x</a>
                 </span>
             @endcan

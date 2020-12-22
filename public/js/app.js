@@ -1915,13 +1915,22 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       editing: false,
-      newText: ''
+      newText: '',
+      oldText: ''
     };
   },
   mounted: function mounted() {
-    this.newText = this.commentData.text;
+    this.oldText = this.newText = this.commentData.text;
   },
   methods: {
+    startEditing: function startEditing() {
+      this.editing = true;
+      this.selectText();
+    },
+    resetText: function resetText() {
+      this.editing = false;
+      this.$refs.input.innerText = this.oldText;
+    },
     textChanged: function textChanged() {
       this.newText = this.$refs.input.innerText;
     },
@@ -1930,12 +1939,27 @@ __webpack_require__.r(__webpack_exports__);
       axios.patch('/comments/' + this.commentData.id, {
         text: this.newText
       });
+      this.oldText = this.newText;
     },
     deleteComment: function deleteComment() {
       if (window.confirm('are you sure ???')) {
         axios["delete"]('/comments/' + this.commentData.id);
         this.$el.remove();
       }
+    },
+    selectText: function selectText() {
+      var _this = this;
+
+      setTimeout(function () {
+        var p = _this.$refs.input,
+            s = window.getSelection(),
+            r = document.createRange();
+        r.setStart(p, 0);
+        r.setEnd(p, 1);
+        s.removeAllRanges();
+        s.addRange(r);
+        p.focus();
+      }, 0);
     }
   }
 });

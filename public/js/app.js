@@ -1939,11 +1939,13 @@ __webpack_require__.r(__webpack_exports__);
       axios.patch('/comments/' + this.commentData.id, {
         text: this.newText
       });
+      this.$root.$emit('flash', 'comment updated');
       this.oldText = this.newText;
     },
     deleteComment: function deleteComment() {
       if (window.confirm('are you sure ???')) {
         axios["delete"]('/comments/' + this.commentData.id);
+        this.$root.$emit('flash', 'comment deleted');
         this.$el.remove();
       }
     },
@@ -1987,24 +1989,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['text'],
+  props: ['text' // session variable from blade
+  ],
   data: function data() {
     return {
-      visible: false
+      visible: false,
+      message: ''
     };
   },
   created: function created() {
+    var _this = this;
+
+    // if have any text from session, visible component
     if (this.text) {
+      this.message = this.text;
       this.show();
     }
+
+    this.$root.$on('flash', function (message) {
+      _this.message = message;
+
+      _this.show();
+    });
   },
   methods: {
     show: function show() {
-      var _this = this;
+      var _this2 = this;
 
       this.visible = true;
       setTimeout(function () {
-        return _this.hide();
+        return _this2.hide();
       }, 3000);
     },
     hide: function hide() {
@@ -20380,7 +20394,7 @@ var render = function() {
             }
           }
         }),
-        _vm._v("\n        " + _vm._s(_vm.text) + "\n    ")
+        _vm._v("\n        " + _vm._s(_vm.message) + "\n    ")
       ]
     )
   ])

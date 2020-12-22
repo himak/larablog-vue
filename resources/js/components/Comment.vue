@@ -39,12 +39,17 @@ export default {
                 text: this.newText
             })
 
+            this.$root.$emit('flash', 'comment updated')
+
             this.oldText = this.newText
         },
 
         deleteComment() {
             if (window.confirm('are you sure ???')) {
                 axios.delete('/comments/' + this.commentData.id)
+
+                this.$root.$emit('flash', 'comment deleted')
+
                 this.$el.remove()
             }
         },

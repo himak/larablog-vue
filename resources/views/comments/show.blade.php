@@ -1,15 +1,19 @@
-<article class="comment">
-    <div class="content">
-        {{ $comment->text }}
-    </div>
+<comment inline-template>
 
-    <footer class="meta">
-        <a href="/users/{{ $comment->user->id }}" class="author">
-            @<strong>{{ $comment->user->name }}</strong>
+    <article class="comment" @click="visible = false" v-show="visible">
+        <div class="content">
+            {{ $comment->text }}
+        </div>
 
-        </a>
-        <time datetime="{{ $comment->created_at->toW3cString() }}" class="has-text-grey">
-            {{ $comment->created_at->diffForHumans() }}
-        </time>
-    </footer>
-</article>
+        <footer class="meta">
+            <a href="/users/{{ $comment->user->id }}" class="author">
+                @<strong>{{ $comment->user->name }}</strong>
+
+            </a>
+            <time datetime="{{ $comment->created_at->toW3cString() }}" class="has-text-grey">
+                {{ $comment->created_at->diffForHumans() }}
+            </time>
+        </footer>
+    </article>
+
+</comment>

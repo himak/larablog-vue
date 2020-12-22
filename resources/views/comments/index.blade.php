@@ -5,15 +5,13 @@
             @include('comments.create')
         @endauth
 
-        <comment></comment>
-
-{{--        <ol class="comment-list">--}}
-{{--            @foreach($post->comments as $comment)--}}
-{{--                <li>--}}
-{{--                    @include('comments.show')--}}
-{{--                </li>--}}
-{{--            @endforeach--}}
-{{--        </ol>--}}
+        <ol class="comment-list">
+            @foreach($post->comments as $comment)
+                <li>
+                    @include('comments.show')
+                </li>
+            @endforeach
+        </ol>
 
     </div>
 </section>

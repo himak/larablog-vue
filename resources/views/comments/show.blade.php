@@ -1,12 +1,11 @@
-<comment inline-template>
+<comment :comment-data="{{ $comment }}" inline-template>
 
     <article class="comment">
 
         <div
             class="content"
-            @dblclick="editing = true"
-            @blur="updateComment"
             :contenteditable="editing"
+            @keydown.enter="updateComment"
         >
             {{ $comment->text }}
         </div>
@@ -25,7 +24,7 @@
             @can('update', $comment)
                 <span class="controls has-text-grey">
                     <a class="edit" @click="editing = true">edit</a>
-                    <a class="delete">x</a>
+                    <a class="delete" @click="deleteComment">x</a>
                 </span>
             @endcan
 

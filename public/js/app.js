@@ -1910,15 +1910,25 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Comment',
+  props: ['comment-data'],
   data: function data() {
     return {
       editing: false
     };
   },
+  mounted: function mounted() {
+    console.log(this.commentData);
+  },
   methods: {
     updateComment: function updateComment() {
-      alert('SAVED!');
+      axios.patch('/comments/' + this.commentData.id, {
+        text: 'lol lol hacked comment'
+      });
       this.editing = false;
+    },
+    deleteComment: function deleteComment() {
+      axios["delete"]('/comments/' + this.commentData.id);
+      this.$el.remove();
     }
   }
 });

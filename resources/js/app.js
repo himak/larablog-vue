@@ -11,5 +11,19 @@ new Vue({
     components: {
         FlashMessage,
         Comment
+    },
+    mounted() {
+        if (location.hash) {
+            setTimeout( () => {
+
+                let el = location.hash.replace('scroll-to-', '')
+
+                document
+                    .querySelector(el)
+                    .scrollIntoView({ behavior: 'smooth' })
+
+            }, 150)
+
+        }
     }
 });

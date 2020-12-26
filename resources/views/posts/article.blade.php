@@ -16,7 +16,7 @@
         <a href="/users/{{ $post->user->id }}" class="author">
             @<strong>{{ $post->user->name }}</strong>
         </a>
-        <a href="/posts/{{ $post->slug }}#comments" class="comments">
+        <a href="/posts/{{ $post->slug }}#scroll-to-comments" class="comments">
             {{ $post->comments->count() }} <strong>{{ str_plural('comment', $post->comments->count()) }}</strong>
         </a>
     </footer>

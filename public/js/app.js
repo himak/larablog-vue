@@ -32591,6 +32591,16 @@ new Vue({
   components: {
     FlashMessage: _components_FlashMessage_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Comment: _components_Comment_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  mounted: function mounted() {
+    if (location.hash) {
+      setTimeout(function () {
+        var el = location.hash.replace('scroll-to-', '');
+        document.querySelector(el).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }, 150);
+    }
   }
 });
 

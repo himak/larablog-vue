@@ -1,5 +1,5 @@
 // let's rock
-import './bootstrap'
+import '../bootstrap'
 
 // components
 import FlashMessage from './components/FlashMessage.vue'

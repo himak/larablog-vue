@@ -24,3 +24,8 @@ Route::resource('posts', \App\Http\Controllers\PostController::class);
 
 // comments
 Route::resource('comments', \App\Http\Controllers\CommentController::class)->only(['store', 'update', 'destroy']);
+
+// admin
+Route::get('/admin/{any?}', function (){
+   return view('layouts.admin');
+})->where('any', '.*');
